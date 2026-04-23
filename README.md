@@ -1,3 +1,13 @@
+# Simple Habit Tracker
+
+Built using react and vite. 
+
+## What I learned
+- React state with useState and useEffect
+- Controlled components and derived state
+- localStorage for persistence
+- Component composition
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
