@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { getLast7Days, today, calcStreak } from "./utils";
+import AddHabitRow from "./components/AddHabitRow";
+import GridHeader  from "./components/GridHeader";
+import HabitRow    from "./components/HabitRow";
 
 const DAYS = getLast7Days();
 const TODAY = today();
@@ -53,5 +56,29 @@ export default function App() {
     }));
   };
 
-  return <div>State ready</div>; 
+  return (
+    <div style={{ maxWidth: 640, margin: "0 auto", padding: "40px 24px" }}>
+      <h1>Habits</h1>
+  
+      <AddHabitRow value={input} onChange={setInput} onAdd={addHabit} />
+  
+      {habits.length === 0 && (
+        <p style={{ color: "#aaa" }}>No habits yet. Add one above.</p>
+      )}
+  
+      {habits.length > 0 && <GridHeader days={DAYS} />}
+  
+      {habits.map(habit => (
+        <HabitRow
+          key={habit.id}
+          habit={habit}
+          days={DAYS}
+          logs={logs}
+          today={TODAY}
+          onToggle={toggle}
+          onRemove={removeHabit}
+        />
+      ))}
+    </div>
+  );
 }
