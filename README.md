@@ -1,5 +1,5 @@
 # Simple Habit Tracker
-
+![Alt text](/image1.png?raw=true "Optional Title")
 Built using react and vite. 
 
 ## What I learned
