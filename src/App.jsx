@@ -57,15 +57,14 @@ export default function App() {
   };
 
   return (
-    <div style={{ maxWidth: 640, margin: "0 auto", padding: "40px 24px" }}>
-      <h1>Habits</h1>
-  
+    <div className="app-shell">
+      <h1 className="app-title">Weekly Habits</h1>
       <AddHabitRow value={input} onChange={setInput} onAdd={addHabit} />
   
       {habits.length === 0 && (
-        <p style={{ color: "#aaa" }}>No habits yet. Add one above.</p>
+        <p className="empty-state">No habits yet. Add one above.</p>
       )}
-  
+
       {habits.length > 0 && <GridHeader days={DAYS} />}
   
       {habits.map(habit => (
